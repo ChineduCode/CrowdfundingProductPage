@@ -1,0 +1,462 @@
+@import url("https://fonts.googleapis.com/css2?family=Commissioner&display=swap");
+* {
+  margin: 0%;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: whitesmoke;
+  text-align: center;
+  font-size: 18px;
+  font-family: "Commissioner";
+}
+
+.hero-img {
+  width: 100%;
+  margin-top: 0%;
+}
+
+.nav-menu {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 2;
+}
+.nav-menu .nav-bar {
+  display: flex;
+  justify-content: space-between;
+  margin: 2em 1em;
+}
+.nav-menu .nav-bar span img {
+  cursor: pointer;
+}
+.nav-menu .nav-bar span .icon-close-menu {
+  display: none;
+}
+.nav-menu nav {
+  text-align: justify;
+  background-color: white;
+  border-radius: 7px;
+  margin: 0 1em;
+  text-align: start;
+  box-shadow: 0 0 25px;
+  overflow: hidden;
+  display: none;
+  z-index: 3;
+}
+.nav-menu nav ul {
+  padding: unset;
+}
+.nav-menu nav ul li {
+  list-style-type: none;
+  padding: 1.2em 1.5em;
+  border-bottom: 1px solid rgb(179, 177, 177);
+  font-size: 20px;
+}
+.nav-menu nav ul li a {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+}
+
+main {
+  margin: 0% 1em;
+  position: relative;
+  bottom: 3em;
+}
+main .text {
+  color: hsl(0deg, 0%, 48%);
+  padding-top: 1.8em;
+  letter-spacing: 0.5px;
+}
+main .mastercraft-container {
+  background-color: white;
+  padding: 0 1em;
+  border-radius: 7px;
+  border: rgb(179, 177, 177) solid 0.2px;
+  margin-bottom: 2.8em;
+}
+main .mastercraft-container .mastercraft-main {
+  position: relative;
+  bottom: 1.5em;
+}
+main .mastercraft-container .mastercraft-main h2 {
+  padding: 1em;
+}
+main .mastercraft-container .mastercraft-main .master-text {
+  color: rgb(138, 137, 137);
+  line-height: 22px;
+  padding-bottom: 1em;
+}
+main .mastercraft-container .mastercraft-main .Btn-bookmark-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+main .mastercraft-container .mastercraft-main .Btn-bookmark-container button {
+  color: white;
+  background-color: hsl(176deg, 50%, 47%);
+  padding: 1em 1.5em;
+  border-radius: 2em;
+  border: none;
+  margin-right: 5px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+}
+main .mastercraft-container .mastercraft-main .Btn-bookmark-container button:active {
+  background-color: hsl(176deg, 72%, 28%);
+}
+main .mastercraft-container .mastercraft-main .Btn-bookmark-container img {
+  cursor: pointer;
+}
+main .mastercraft-container .mastercraft-main .Btn-bookmark-container .bookmark-container {
+  display: flex;
+  align-items: center;
+  background-color: hsl(0deg, 0%, 48%);
+  border-radius: 30px;
+}
+main .mastercraft-container .mastercraft-main .Btn-bookmark-container .bookmark-container .bookmark-text {
+  padding: 10px;
+  margin-right: 10px;
+  display: none;
+}
+main .stats-container {
+  background-color: white;
+  padding: 2em 1em;
+  border: solid 0.2px rgb(179, 177, 177);
+  border-radius: 7px;
+}
+main .stats-container .stats h1 {
+  padding-bottom: 12px;
+  letter-spacing: 2px;
+}
+main .stats-container .stats p {
+  padding-bottom: 20px;
+  color: rgb(138, 137, 137);
+  letter-spacing: 1px;
+}
+main .stats-container .stats hr {
+  color: rgb(138, 137, 137);
+  width: 25%;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+}
+main .stats-container .stats .total-backed-container, main .stats-container .stats .total-backers-container, main .stats-container .stats .days-left-container {
+  margin-bottom: 1.7em;
+  padding-top: 1em;
+}
+main .stats-container input {
+  width: 100%;
+}
+main .about-container {
+  text-align: justify;
+  background-color: white;
+  margin-top: 2.8em;
+  border-radius: 7px;
+  padding: 2em 1em;
+  border: solid 0.2px rgb(179, 177, 177);
+}
+main .about-container div {
+  border: solid 0.2px rgb(179, 177, 177);
+  border-radius: 7px;
+  margin-top: 2em;
+  padding: 1.6em;
+}
+main .about-container div h3 {
+  padding-bottom: 0.5em;
+}
+main .about-container div .price {
+  color: hsl(176deg, 50%, 47%);
+  font-weight: bold;
+}
+main .about-container div .days-left {
+  padding: 1em 0;
+}
+main .about-container div .days-left .left {
+  color: rgb(138, 137, 137);
+  position: relative;
+  bottom: 5px;
+  left: 5px;
+  letter-spacing: 0.5px;
+}
+main .about-container div .days-left .num {
+  color: black;
+  font-weight: bold;
+  font-size: 32px;
+}
+main .about-container button {
+  color: white;
+  background-color: hsl(176deg, 50%, 47%);
+  padding: 0.5em 1em;
+  border-radius: 2em;
+  font-weight: 600;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+main .about-container button:active {
+  background-color: hsl(176deg, 72%, 28%);
+}
+
+.selection-modal {
+  position: absolute;
+  top: 25%;
+  z-index: 1000;
+  width: 100%;
+  transition: 0.6s;
+  display: none;
+}
+.selection-modal .modal-container {
+  margin: 0% 1em;
+  margin-top: 2em;
+  padding: 2em 1em;
+  background-color: white;
+  text-align: justify;
+  border-radius: 7px;
+  border: solid 0.2px rgb(179, 177, 177);
+  box-shadow: 0 0 30px;
+}
+.selection-modal .modal-container .text {
+  color: hsl(0deg, 0%, 48%);
+  padding-top: 1.8em;
+  letter-spacing: 0.5px;
+}
+.selection-modal .modal-container .header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.selection-modal .modal-container .header img {
+  cursor: pointer;
+}
+.selection-modal .modal-container .header .header-text {
+  font-weight: bold;
+  font-size: 20px;
+}
+.selection-modal .modal-container .pledge-with-no-reward-container, .selection-modal .modal-container .bamboo-stand-container, .selection-modal .modal-container .black-edition-stand-container, .selection-modal .modal-container .mohogany-special-edition-container {
+  border: solid 0.2px rgb(179, 177, 177);
+  border-radius: 7px;
+  margin-top: 2em;
+  padding: 1.6em;
+}
+.selection-modal .modal-container .pledge-with-no-reward-container .radio-header, .selection-modal .modal-container .bamboo-stand-container .radio-header, .selection-modal .modal-container .black-edition-stand-container .radio-header, .selection-modal .modal-container .mohogany-special-edition-container .radio-header {
+  display: flex;
+  align-items: center;
+}
+.selection-modal .modal-container .pledge-with-no-reward-container .radio-header .modal-sub-header, .selection-modal .modal-container .bamboo-stand-container .radio-header .modal-sub-header, .selection-modal .modal-container .black-edition-stand-container .radio-header .modal-sub-header, .selection-modal .modal-container .mohogany-special-edition-container .radio-header .modal-sub-header {
+  margin-left: 15px;
+}
+.selection-modal .modal-container .pledge-with-no-reward-container input[type=radio], .selection-modal .modal-container .bamboo-stand-container input[type=radio], .selection-modal .modal-container .black-edition-stand-container input[type=radio], .selection-modal .modal-container .mohogany-special-edition-container input[type=radio] {
+  height: 20px;
+  width: 20px;
+  cursor: pointer;
+}
+.selection-modal .modal-container .pledge-with-no-reward-container .price, .selection-modal .modal-container .bamboo-stand-container .price, .selection-modal .modal-container .black-edition-stand-container .price, .selection-modal .modal-container .mohogany-special-edition-container .price {
+  color: hsl(176deg, 50%, 47%);
+  font-weight: bold;
+  cursor: pointer;
+}
+.selection-modal .modal-container .pledge-with-no-reward-container .price:active, .selection-modal .modal-container .bamboo-stand-container .price:active, .selection-modal .modal-container .black-edition-stand-container .price:active, .selection-modal .modal-container .mohogany-special-edition-container .price:active {
+  color: hsl(176deg, 72%, 28%);
+}
+.selection-modal .modal-container .pledge-with-no-reward-container .days-left, .selection-modal .modal-container .bamboo-stand-container .days-left, .selection-modal .modal-container .black-edition-stand-container .days-left, .selection-modal .modal-container .mohogany-special-edition-container .days-left {
+  padding: 1em 0;
+}
+.selection-modal .modal-container .pledge-with-no-reward-container .days-left .left, .selection-modal .modal-container .bamboo-stand-container .days-left .left, .selection-modal .modal-container .black-edition-stand-container .days-left .left, .selection-modal .modal-container .mohogany-special-edition-container .days-left .left {
+  color: rgb(138, 137, 137);
+  position: relative;
+  bottom: 3px;
+  left: 5px;
+  letter-spacing: 0.5px;
+}
+.selection-modal .modal-container .pledge-with-no-reward-container .days-left .num, .selection-modal .modal-container .bamboo-stand-container .days-left .num, .selection-modal .modal-container .black-edition-stand-container .days-left .num, .selection-modal .modal-container .mohogany-special-edition-container .days-left .num {
+  color: black;
+  font-weight: bold;
+  font-size: 24px;
+}
+.selection-modal .modal-container .pledge-with-no-reward-container .selected-pledge, .selection-modal .modal-container .bamboo-stand-container .selected-pledge, .selection-modal .modal-container .black-edition-stand-container .selected-pledge, .selection-modal .modal-container .mohogany-special-edition-container .selected-pledge {
+  border-top: solid 1px rgb(138, 137, 137);
+  padding: 0;
+  display: none;
+}
+.selection-modal .modal-container .pledge-with-no-reward-container .selected-pledge .pledge-btn, .selection-modal .modal-container .bamboo-stand-container .selected-pledge .pledge-btn, .selection-modal .modal-container .black-edition-stand-container .selected-pledge .pledge-btn, .selection-modal .modal-container .mohogany-special-edition-container .selected-pledge .pledge-btn {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 2em;
+  align-items: center;
+}
+.selection-modal .modal-container .pledge-with-no-reward-container .selected-pledge .pledge-btn #pledge-input, .selection-modal .modal-container .bamboo-stand-container .selected-pledge .pledge-btn #pledge-input, .selection-modal .modal-container .black-edition-stand-container .selected-pledge .pledge-btn #pledge-input, .selection-modal .modal-container .mohogany-special-edition-container .selected-pledge .pledge-btn #pledge-input {
+  font-weight: bold;
+  border: solid 0.3px rgb(138, 137, 137);
+  padding: 0.5em 0.8em;
+  border-radius: 2em;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  width: 100px;
+  justify-items: center;
+  text-align: center;
+}
+.selection-modal .modal-container .pledge-with-no-reward-container .selected-pledge .pledge-btn button, .selection-modal .modal-container .bamboo-stand-container .selected-pledge .pledge-btn button, .selection-modal .modal-container .black-edition-stand-container .selected-pledge .pledge-btn button, .selection-modal .modal-container .mohogany-special-edition-container .selected-pledge .pledge-btn button {
+  color: white;
+  background-color: hsl(176deg, 50%, 47%);
+  padding: 0.5em 1em;
+  border-radius: 2em;
+  font-weight: 600;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+.selection-modal .modal-container .pledge-with-no-reward-container .selected-pledge .pledge-btn button:active, .selection-modal .modal-container .bamboo-stand-container .selected-pledge .pledge-btn button:active, .selection-modal .modal-container .black-edition-stand-container .selected-pledge .pledge-btn button:active, .selection-modal .modal-container .mohogany-special-edition-container .selected-pledge .pledge-btn button:active {
+  background-color: hsl(176deg, 72%, 28%);
+}
+.selection-modal .modal-container .pledge-with-no-reward-container .selected-pledge .enter-pledge-text, .selection-modal .modal-container .bamboo-stand-container .selected-pledge .enter-pledge-text, .selection-modal .modal-container .black-edition-stand-container .selected-pledge .enter-pledge-text, .selection-modal .modal-container .mohogany-special-edition-container .selected-pledge .enter-pledge-text {
+  color: rgb(138, 137, 137);
+  text-align: center;
+  padding-top: 2em;
+}
+
+.success-modal-container {
+  display: flex;
+  justify-content: center;
+  margin: 0 1em;
+  display: none;
+}
+.success-modal-container .success-modal {
+  border: solid 0.2px rgb(179, 177, 177);
+  box-shadow: 0 0 30px;
+  padding: 1em;
+  background-color: white;
+  border-radius: 10px;
+  position: fixed;
+  z-index: 1000;
+  top: 20%;
+  width: 340px;
+  max-width: 100%;
+}
+.success-modal-container .success-modal img {
+  padding: 0.6em;
+  transition: 0.5s;
+}
+.success-modal-container .success-modal h2 {
+  padding-bottom: 1em;
+}
+.success-modal-container .success-modal button {
+  color: white;
+  background-color: hsl(176deg, 50%, 47%);
+  padding: 1em 1.5em;
+  border-radius: 2.5em;
+  font-weight: 700;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  display: inline-block;
+  margin-top: 15px;
+}
+.success-modal-container .success-modal button:active {
+  background-color: hsl(176deg, 72%, 28%);
+}
+
+.toggle {
+  display: block;
+}
+
+@media only screen and (min-width: 768px) {
+  .nav-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 2.5em;
+  }
+  .nav-menu .nav-bar {
+    margin: 0;
+    padding: 0;
+  }
+  .nav-menu .nav-bar .nav-icons {
+    display: none;
+    padding: 0;
+    margin: 0;
+  }
+  .nav-menu nav {
+    background-color: unset;
+    border-radius: unset;
+    text-align: unset;
+    box-shadow: unset;
+    display: unset;
+  }
+  .nav-menu nav ul {
+    display: flex;
+    align-items: flex-start;
+  }
+  .nav-menu nav ul li {
+    list-style-type: none;
+    padding: 0% 1em;
+    border-bottom: unset;
+    font-size: 18px;
+  }
+  .nav-menu nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+  }
+  .nav-menu nav ul li a:hover {
+    font-weight: 600;
+  }
+  .nav-menu nav ul li a:active {
+    filter: drop-shadow(0.8);
+  }
+  main {
+    width: 70%;
+    margin: auto;
+  }
+  main .stats {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+  main .stats hr {
+    display: none;
+  }
+  main .about-container .header, main .about-container .footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .selection-modal .modal-container {
+    width: 70%;
+    margin: auto;
+  }
+  .selection-modal .modal-container .modal-sub-header {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .selection-modal .modal-container .modal-sub-header p {
+    margin-left: 15px;
+  }
+  .selection-modal .modal-container .selected-pledge {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .selection-modal .modal-container .selected-pledge .pledge-btn #pledge-input {
+    margin-right: 15px;
+  }
+}
+/* Light and Dark mode */
+/* Light Mode */
+@media (prefers-color-scheme: light) {
+  :root {
+    --body-bg: #ffffff;
+    --body-color: #000000;
+  }
+}
+/* Dark Mode */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --body-bg: #000000;
+    --body-color: #ffffff;
+  }
+}/*# sourceMappingURL=main.css.map */
