@@ -13,9 +13,14 @@ body{
 }
 
 //hero-img
-.hero-img{
-    width: 100%;
-    margin-top: 0%;
+.hero-img-container{
+    .hero-img-mobile{
+        width: 100%;
+        margin-top: 0%;
+    }
+    .hero-img-desktop{
+        display: none;
+    }
 }
 
 //nav-container
@@ -23,7 +28,7 @@ body{
     position: absolute;
     top: 0;
     width: 100%;
-    z-index: 2;
+    z-index: 4;
     
     .nav-bar{
         display: flex;
@@ -46,7 +51,7 @@ body{
         border-radius: 7px;
         margin: 0 1em;
         text-align: start;
-        box-shadow: 0 0 25px;
+        box-shadow: 0 0 100px gray;
         overflow: hidden;
         display: none;
         z-index: 3;
@@ -119,20 +124,19 @@ main {
                         background-color: hsl(176, 72%, 28%);
                     }
                 }
-
-                img{
-                    cursor: pointer;
-                }
                 
                 .bookmark-container{
+                    background-color: hsl(0, 0%, 89%);
                     display: flex;
                     align-items: center;
-                    background-color: hsl(0, 0%, 48%);
-                    border-radius: 30px;
-                    
+                    border-radius: 50px;
+                    cursor: pointer;
+
                     .bookmark-text{
-                        padding: 10px;
-                        margin-right: 10px;
+                        padding: 0 20px;
+                        color: hsl(0, 0%, 48%);
+                        font-weight: 600;
+                        text-transform: capitalize;
                         display: none;
                     }
                 }
@@ -217,7 +221,7 @@ main {
         button {
             color: white;
             background-color: hsl(176, 50%, 47%);
-            padding: .5em 1em;
+            padding: 1em 1.5em;
             border-radius: 2em;
             font-weight: 600;
             font-size: 16px;
@@ -332,7 +336,7 @@ main {
                     #pledge-input{
                         font-weight: bold;
                         border: solid .3px rgb(138, 137, 137);
-                        padding: .5em .8em;
+                        padding: 1em 1.5em;
                         border-radius: 2em;
                         cursor: pointer;
                         font-size: 16px;
@@ -345,7 +349,7 @@ main {
                     button{
                         color: white;
                         background-color: hsl(176, 50%, 47%);
-                        padding: .5em 1em;
+                        padding: 1em 1.5em;
                         border-radius: 2em;
                         font-weight: 600;
                         font-size: 16px;
@@ -423,6 +427,15 @@ main {
 
 
 @media only screen and (min-width: 768px){
+    .hero-img-container{
+        .hero-img-mobile{
+            display: none;
+        }
+        .hero-img-desktop{
+            display: block;
+            width: 100%;
+        }
+    }
     .nav-menu{
         display: flex;
         justify-content: space-between;
@@ -472,8 +485,26 @@ main {
     }
     
     main{
-        width: 70%;
+        width: 60%;
         margin: auto;
+
+        .mastercraft-container{
+            .mastercraft-main{
+                .Btn-bookmark-container{
+                    .bookmark-container{
+                        .bookmark-text{
+                            display: block;
+                        }
+                        .bookmark{
+                            color: hsl(176, 50%, 47%);
+                            &::after{
+                                content: 'ed';
+                            }
+                        }
+                    }
+                }
+            }
+        }   
        .stats{
            display: flex;
            align-items: center;
@@ -536,17 +567,17 @@ main {
 /* Light and Dark mode */
 
 /* Light Mode */
-@media (prefers-color-scheme: light) {
-    :root {
-        --body-bg: #ffffff;
-        --body-color: #000000;
-    }
-}
+// @media (prefers-color-scheme: light) {
+//     :root {
+//         --body-bg: #ffffff;
+//         --body-color: #000000;
+//     }
+// }
 
-/* Dark Mode */
-@media (prefers-color-scheme: dark) {
-    :root {
-        --body-bg: #000000;
-        --body-color: #ffffff;
-    }
-}
+// /* Dark Mode */
+// @media (prefers-color-scheme: dark) {
+//     :root {
+//         --body-bg: #000000;
+//         --body-color: #ffffff;
+//     }
+// }

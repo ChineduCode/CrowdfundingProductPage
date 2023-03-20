@@ -11,16 +11,19 @@ body {
   font-family: "Commissioner";
 }
 
-.hero-img {
+.hero-img-container .hero-img-mobile {
   width: 100%;
   margin-top: 0%;
+}
+.hero-img-container .hero-img-desktop {
+  display: none;
 }
 
 .nav-menu {
   position: absolute;
   top: 0;
   width: 100%;
-  z-index: 2;
+  z-index: 4;
 }
 .nav-menu .nav-bar {
   display: flex;
@@ -39,7 +42,7 @@ body {
   border-radius: 7px;
   margin: 0 1em;
   text-align: start;
-  box-shadow: 0 0 25px;
+  box-shadow: 0 0 100px gray;
   overflow: hidden;
   display: none;
   z-index: 3;
@@ -65,7 +68,7 @@ main {
   bottom: 3em;
 }
 main .text {
-  color: hsl(0deg, 0%, 48%);
+  color: hsl(0, 0%, 48%);
   padding-top: 1.8em;
   letter-spacing: 0.5px;
 }
@@ -95,7 +98,7 @@ main .mastercraft-container .mastercraft-main .Btn-bookmark-container {
 }
 main .mastercraft-container .mastercraft-main .Btn-bookmark-container button {
   color: white;
-  background-color: hsl(176deg, 50%, 47%);
+  background-color: hsl(176, 50%, 47%);
   padding: 1em 1.5em;
   border-radius: 2em;
   border: none;
@@ -105,20 +108,20 @@ main .mastercraft-container .mastercraft-main .Btn-bookmark-container button {
   cursor: pointer;
 }
 main .mastercraft-container .mastercraft-main .Btn-bookmark-container button:active {
-  background-color: hsl(176deg, 72%, 28%);
-}
-main .mastercraft-container .mastercraft-main .Btn-bookmark-container img {
-  cursor: pointer;
+  background-color: hsl(176, 72%, 28%);
 }
 main .mastercraft-container .mastercraft-main .Btn-bookmark-container .bookmark-container {
+  background-color: hsl(0, 0%, 89%);
   display: flex;
   align-items: center;
-  background-color: hsl(0deg, 0%, 48%);
-  border-radius: 30px;
+  border-radius: 50px;
+  cursor: pointer;
 }
 main .mastercraft-container .mastercraft-main .Btn-bookmark-container .bookmark-container .bookmark-text {
-  padding: 10px;
-  margin-right: 10px;
+  padding: 0 20px;
+  color: hsl(0, 0%, 48%);
+  font-weight: 600;
+  text-transform: capitalize;
   display: none;
 }
 main .stats-container {
@@ -168,7 +171,7 @@ main .about-container div h3 {
   padding-bottom: 0.5em;
 }
 main .about-container div .price {
-  color: hsl(176deg, 50%, 47%);
+  color: hsl(176, 50%, 47%);
   font-weight: bold;
 }
 main .about-container div .days-left {
@@ -188,8 +191,8 @@ main .about-container div .days-left .num {
 }
 main .about-container button {
   color: white;
-  background-color: hsl(176deg, 50%, 47%);
-  padding: 0.5em 1em;
+  background-color: hsl(176, 50%, 47%);
+  padding: 1em 1.5em;
   border-radius: 2em;
   font-weight: 600;
   font-size: 16px;
@@ -197,7 +200,7 @@ main .about-container button {
   cursor: pointer;
 }
 main .about-container button:active {
-  background-color: hsl(176deg, 72%, 28%);
+  background-color: hsl(176, 72%, 28%);
 }
 
 .selection-modal {
@@ -219,7 +222,7 @@ main .about-container button:active {
   box-shadow: 0 0 30px;
 }
 .selection-modal .modal-container .text {
-  color: hsl(0deg, 0%, 48%);
+  color: hsl(0, 0%, 48%);
   padding-top: 1.8em;
   letter-spacing: 0.5px;
 }
@@ -254,12 +257,12 @@ main .about-container button:active {
   cursor: pointer;
 }
 .selection-modal .modal-container .pledge-with-no-reward-container .price, .selection-modal .modal-container .bamboo-stand-container .price, .selection-modal .modal-container .black-edition-stand-container .price, .selection-modal .modal-container .mohogany-special-edition-container .price {
-  color: hsl(176deg, 50%, 47%);
+  color: hsl(176, 50%, 47%);
   font-weight: bold;
   cursor: pointer;
 }
 .selection-modal .modal-container .pledge-with-no-reward-container .price:active, .selection-modal .modal-container .bamboo-stand-container .price:active, .selection-modal .modal-container .black-edition-stand-container .price:active, .selection-modal .modal-container .mohogany-special-edition-container .price:active {
-  color: hsl(176deg, 72%, 28%);
+  color: hsl(176, 72%, 28%);
 }
 .selection-modal .modal-container .pledge-with-no-reward-container .days-left, .selection-modal .modal-container .bamboo-stand-container .days-left, .selection-modal .modal-container .black-edition-stand-container .days-left, .selection-modal .modal-container .mohogany-special-edition-container .days-left {
   padding: 1em 0;
@@ -290,7 +293,7 @@ main .about-container button:active {
 .selection-modal .modal-container .pledge-with-no-reward-container .selected-pledge .pledge-btn #pledge-input, .selection-modal .modal-container .bamboo-stand-container .selected-pledge .pledge-btn #pledge-input, .selection-modal .modal-container .black-edition-stand-container .selected-pledge .pledge-btn #pledge-input, .selection-modal .modal-container .mohogany-special-edition-container .selected-pledge .pledge-btn #pledge-input {
   font-weight: bold;
   border: solid 0.3px rgb(138, 137, 137);
-  padding: 0.5em 0.8em;
+  padding: 1em 1.5em;
   border-radius: 2em;
   cursor: pointer;
   font-size: 16px;
@@ -301,8 +304,8 @@ main .about-container button:active {
 }
 .selection-modal .modal-container .pledge-with-no-reward-container .selected-pledge .pledge-btn button, .selection-modal .modal-container .bamboo-stand-container .selected-pledge .pledge-btn button, .selection-modal .modal-container .black-edition-stand-container .selected-pledge .pledge-btn button, .selection-modal .modal-container .mohogany-special-edition-container .selected-pledge .pledge-btn button {
   color: white;
-  background-color: hsl(176deg, 50%, 47%);
-  padding: 0.5em 1em;
+  background-color: hsl(176, 50%, 47%);
+  padding: 1em 1.5em;
   border-radius: 2em;
   font-weight: 600;
   font-size: 16px;
@@ -310,7 +313,7 @@ main .about-container button:active {
   cursor: pointer;
 }
 .selection-modal .modal-container .pledge-with-no-reward-container .selected-pledge .pledge-btn button:active, .selection-modal .modal-container .bamboo-stand-container .selected-pledge .pledge-btn button:active, .selection-modal .modal-container .black-edition-stand-container .selected-pledge .pledge-btn button:active, .selection-modal .modal-container .mohogany-special-edition-container .selected-pledge .pledge-btn button:active {
-  background-color: hsl(176deg, 72%, 28%);
+  background-color: hsl(176, 72%, 28%);
 }
 .selection-modal .modal-container .pledge-with-no-reward-container .selected-pledge .enter-pledge-text, .selection-modal .modal-container .bamboo-stand-container .selected-pledge .enter-pledge-text, .selection-modal .modal-container .black-edition-stand-container .selected-pledge .enter-pledge-text, .selection-modal .modal-container .mohogany-special-edition-container .selected-pledge .enter-pledge-text {
   color: rgb(138, 137, 137);
@@ -345,7 +348,7 @@ main .about-container button:active {
 }
 .success-modal-container .success-modal button {
   color: white;
-  background-color: hsl(176deg, 50%, 47%);
+  background-color: hsl(176, 50%, 47%);
   padding: 1em 1.5em;
   border-radius: 2.5em;
   font-weight: 700;
@@ -356,7 +359,7 @@ main .about-container button:active {
   margin-top: 15px;
 }
 .success-modal-container .success-modal button:active {
-  background-color: hsl(176deg, 72%, 28%);
+  background-color: hsl(176, 72%, 28%);
 }
 
 .toggle {
@@ -364,6 +367,13 @@ main .about-container button:active {
 }
 
 @media only screen and (min-width: 768px) {
+  .hero-img-container .hero-img-mobile {
+    display: none;
+  }
+  .hero-img-container .hero-img-desktop {
+    display: block;
+    width: 100%;
+  }
   .nav-menu {
     display: flex;
     justify-content: space-between;
@@ -408,8 +418,17 @@ main .about-container button:active {
     filter: drop-shadow(0.8);
   }
   main {
-    width: 70%;
+    width: 60%;
     margin: auto;
+  }
+  main .mastercraft-container .mastercraft-main .Btn-bookmark-container .bookmark-container .bookmark-text {
+    display: block;
+  }
+  main .mastercraft-container .mastercraft-main .Btn-bookmark-container .bookmark-container .bookmark {
+    color: hsl(176, 50%, 47%);
+  }
+  main .mastercraft-container .mastercraft-main .Btn-bookmark-container .bookmark-container .bookmark::after {
+    content: "ed";
   }
   main .stats {
     display: flex;
@@ -446,17 +465,4 @@ main .about-container button:active {
   }
 }
 /* Light and Dark mode */
-/* Light Mode */
-@media (prefers-color-scheme: light) {
-  :root {
-    --body-bg: #ffffff;
-    --body-color: #000000;
-  }
-}
-/* Dark Mode */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --body-bg: #000000;
-    --body-color: #ffffff;
-  }
-}/*# sourceMappingURL=main.css.map */
+/* Light Mode *//*# sourceMappingURL=main.css.map */

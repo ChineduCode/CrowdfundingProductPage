@@ -23,13 +23,28 @@ closeMenu.addEventListener('click', ()=>{
 
 //variables for mastercraft container
 const mastercraftBtn = document.getElementById('mastercraft-btn');
-const bookmarkIcon = document.getElementById('icon-bookmark');
+const bookmark = document.querySelector('.bookmark-container')
+const bookmarkText = document.querySelector('.bookmark-text')
+
+//bookmark
+bookmark.addEventListener('click', ()=> {
+    bookmarkText.classList.toggle('bookmark')
+})
 
 //variables for modal container
 const modalContainer = document.querySelector('.selection-modal');
 const modalExitBtn = document.getElementById('icon-close-modal');
 const radioBtns = document.querySelectorAll('#select');
 
+
+//event listener for mastercraft btn
+mastercraftBtn.addEventListener('click', ()=>{
+    modalDisplayBlock(modalContainer)
+});
+//event listener for modalExitBtn
+modalExitBtn.addEventListener('click', ()=>{
+    modalDisplayNone(modalContainer)
+});
 
 //creating function for displaying modal container when needed
 function modalDisplayBlock(container){
@@ -42,16 +57,6 @@ function modalDisplayNone(container){
     container.classList.remove('toggle');
     maincontainer.style.filter = 'brightness(1)'
 }
-
-
-//event listener for mastercraft btn
-mastercraftBtn.addEventListener('click', ()=>{
-    modalDisplayBlock(modalContainer)
-});
-//event listener for modalExitBtn
-modalExitBtn.addEventListener('click', ()=>{
-    modalDisplayNone(modalContainer)
-});
 
 
 

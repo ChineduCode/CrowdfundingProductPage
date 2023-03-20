@@ -12,3 +12,6 @@ Users will be able to:
 - See an updated progress bar and total money raised based on their pledge total after confirming a pledge
 - See the number of total backers increment by one after confirming a pledge
 - Toggle whether or not the product is bookmarked (not available yet)
+
+**Lessons**
+-It was really a very tough challenge for me but at last, I learnt many things (like: its by debugging that we learn)
