@@ -39,7 +39,7 @@ const radioBtns = document.querySelectorAll('#select');
 
 //event listener for mastercraft btn
 mastercraftBtn.addEventListener('click', ()=>{
-    modalDisplayBlock(modalContainer)
+    modalDisplay(modalContainer)
 });
 //event listener for modalExitBtn
 modalExitBtn.addEventListener('click', ()=>{
@@ -47,24 +47,26 @@ modalExitBtn.addEventListener('click', ()=>{
 });
 
 //creating function for displaying modal container when needed
-function modalDisplayBlock(container){
-    container.classList.add('toggle')
+function modalDisplay(container){
+    container.classList.add('active-modal')
     maincontainer.style.filter= 'brightness(0.85)';
     window.scrollTo(0, 0)
 }
 
 function modalDisplayNone(container){
-    container.classList.remove('toggle');
+    container.classList.remove('active-modal');
     maincontainer.style.filter = 'brightness(1)'
 }
 
 
 
 //variables for stat container
-const totalBacked = document.querySelector('#total-backed')
-const totalBackers = document.querySelector('#total-backers')
+const totalBackedInnerText = document.querySelector('#total-backed')
+const totalBackersInnerText = document.querySelector('#total-backers')
 const daysLeft = document.querySelector('#days-left')
-const range = document.querySelector('#range')
+
+let totalBacked = 89914
+let totalBackers = 5007
 
 
 //about this project section
@@ -72,18 +74,45 @@ const range = document.querySelector('#range')
 const Btns = document.querySelectorAll('.btn')
 Btns.forEach(btn => {
     btn.addEventListener('click', ()=> {
-        modalDisplayBlock(modalContainer)
+        modalDisplay(modalContainer)
     })
 })
 
+//for days display and its range percentage
+const countdownDays = setInterval(() => {
+    const  now = new Date().getTime()
+    const targetDate = new Date('2023-12-31T23:59:59').getTime()
+    const startDate = new Date('2023-03-01T00:00:00').getTime()
+    const totalTime = targetDate - startDate
+    const timeRemaining = targetDate - now
+    
+    const totaldays = Math.floor(totalTime / (1000 * 60 * 60 * 24));
+    const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
 
+    daysLeft.innerText = days
+    
+    if(days < 10){
+        daysLeft.innerText = '0'+ days;
+    }
+    
+    const daysPassed = totaldays - days //days passed
+    const daysPer = Math.floor((daysPassed/totaldays) * 100); //percentage of the day passed from the total days
+
+    if(days < 0){
+        clearInterval(countdownDays)
+        daysLeft.innerText = 'EXPIRED'
+    }
+    
+    document.querySelector('.progress').style.width = `${daysPer}%` 
+
+}, 1000);
 
 //displaying selected pledge once radioBtn is clicked
-radioBtns.forEach(radioBtn => {
-    radioBtn.addEventListener('click', ()=> {
-        const selectedPledge = radioBtn.parentElement.parentElement.lastElementChild;
-        
-        selectedPledge.style.display= 'block';
+radioBtns.forEach(btn => {
+    btn.addEventListener('click', ()=> {
+        const selectedPledge = btn.parentElement.parentElement.lastElementChild;
+        selectedPledge.classList.toggle('active-selected-pledge')
+        btn.classList.toggle('active')
     })
 });
 
@@ -93,16 +122,35 @@ const Pledge25 = document.querySelector('.pledge-25')
 const Pledge75 = document.querySelector('.pledge-75')
 const Pledge200 = document.querySelector('.pledge-200')
 
+let count = 0
 pledgeContdBtns.forEach(pledgeContdBtn => {
     pledgeContdBtn.addEventListener('click', ()=>{
 
         //total amount backed
         if(pledgeContdBtn.classList.contains('25')){
-            totalBacked.innerText = (totalBacked.innerText)/1 + (Pledge25.value)/1
+            
+            if(Pledge25.value == '' || Pledge25.value < 25){
+                return
+            }else{
+                totalBackedInnerText.innerText = totalBacked + parseFloat(Pledge25.value)
+            }
+
         }else if(pledgeContdBtn.classList.contains('75')){
-            totalBacked.innerText = (totalBacked.innerText)/1 + (Pledge75.value)/1
+
+            if(Pledge75.value == '' || Pledge75.value < 75){
+                return
+            }else{
+                totalBackedInnerText.innerText = totalBacked + parseFloat(Pledge75.value)
+            }
+
         }else{
-            totalBacked.innerText = (totalBacked.innerText)/1 + (Pledge200.value)/1
+
+            if(Pledge200.value == '' || Pledge200.value < 200){
+                return
+            }else{
+                totalBackedInnerText.innerText = totalBacked + parseFloat(Pledge200.value)
+            }
+
         }
 
         modalDisplayNone(modalContainer);
@@ -121,8 +169,7 @@ pledgeContdBtns.forEach(pledgeContdBtn => {
 
 
         //Total backers
-        let count = 0
         count++
-        totalBackers.innerText = (totalBackers.innerText)/1 + count;
+        totalBackersInnerText.innerText = totalBackers + count;
     })
 });

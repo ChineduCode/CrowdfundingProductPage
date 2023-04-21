@@ -9,6 +9,8 @@ body {
   text-align: center;
   font-size: 18px;
   font-family: "Commissioner";
+  scroll-behavior: smooth;
+  transition: all 0.4s ease-in-out;
 }
 
 .hero-img-container .hero-img-mobile {
@@ -150,8 +152,23 @@ main .stats-container .stats .total-backed-container, main .stats-container .sta
   margin-bottom: 1.7em;
   padding-top: 1em;
 }
-main .stats-container input {
+main .stats-container .progress-container .days-progress {
   width: 100%;
+  height: 1rem;
+  background-color: rgb(241, 241, 241);
+  border-radius: 50px;
+  position: relative;
+  overflow: hidden;
+}
+main .stats-container .progress-container .days-progress .progress {
+  position: absolute;
+  height: 1rem;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  background-color: hsl(176, 50%, 47%);
+  width: 50%;
+  border-radius: 50px;
 }
 main .about-container {
   text-align: justify;
@@ -208,8 +225,8 @@ main .about-container button:active {
   top: 25%;
   z-index: 1000;
   width: 100%;
-  transition: 0.6s;
-  display: none;
+  transform: translateY(-100%) scaleY(0);
+  transition: all 0.4s ease-in-out;
 }
 .selection-modal .modal-container {
   margin: 0% 1em;
@@ -255,6 +272,12 @@ main .about-container button:active {
   height: 20px;
   width: 20px;
   cursor: pointer;
+  -webkit-appearance: none;
+  border: solid 2px grey;
+  border-radius: 50%;
+}
+.selection-modal .modal-container .pledge-with-no-reward-container .active, .selection-modal .modal-container .bamboo-stand-container .active, .selection-modal .modal-container .black-edition-stand-container .active, .selection-modal .modal-container .mohogany-special-edition-container .active {
+  background-color: hsl(176, 50%, 47%);
 }
 .selection-modal .modal-container .pledge-with-no-reward-container .price, .selection-modal .modal-container .bamboo-stand-container .price, .selection-modal .modal-container .black-edition-stand-container .price, .selection-modal .modal-container .mohogany-special-edition-container .price {
   color: hsl(176, 50%, 47%);
@@ -319,6 +342,13 @@ main .about-container button:active {
   color: rgb(138, 137, 137);
   text-align: center;
   padding-top: 2em;
+}
+.selection-modal .modal-container .pledge-with-no-reward-container .active-selected-pledge, .selection-modal .modal-container .bamboo-stand-container .active-selected-pledge, .selection-modal .modal-container .black-edition-stand-container .active-selected-pledge, .selection-modal .modal-container .mohogany-special-edition-container .active-selected-pledge {
+  display: block;
+}
+
+.active-modal {
+  transform: translateY(0%) scaleY(1);
 }
 
 .success-modal-container {
@@ -434,6 +464,7 @@ main .about-container button:active {
     display: flex;
     align-items: center;
     justify-content: space-around;
+    text-align: justify;
   }
   main .stats hr {
     display: none;
@@ -444,8 +475,8 @@ main .about-container button:active {
     align-items: center;
   }
   .selection-modal .modal-container {
-    width: 70%;
     margin: auto;
+    width: 60%;
   }
   .selection-modal .modal-container .modal-sub-header {
     display: flex;
@@ -455,14 +486,24 @@ main .about-container button:active {
   .selection-modal .modal-container .modal-sub-header p {
     margin-left: 15px;
   }
-  .selection-modal .modal-container .selected-pledge {
-    display: flex;
+  .selection-modal .modal-container .bamboo-stand-container, .selection-modal .modal-container .black-edition-stand-container, .selection-modal .modal-container .mohogany-special-edition-container {
+    position: relative;
+  }
+  .selection-modal .modal-container .bamboo-stand-container .days-left, .selection-modal .modal-container .black-edition-stand-container .days-left, .selection-modal .modal-container .mohogany-special-edition-container .days-left {
+    position: absolute;
+    top: 8px;
+    right: 33px;
+  }
+  .selection-modal .modal-container .bamboo-stand-container .selected-pledge, .selection-modal .modal-container .black-edition-stand-container .selected-pledge, .selection-modal .modal-container .mohogany-special-edition-container .selected-pledge {
+    margin-top: 2em;
+    display: none;
     align-items: center;
     justify-content: space-between;
   }
-  .selection-modal .modal-container .selected-pledge .pledge-btn #pledge-input {
+  .selection-modal .modal-container .bamboo-stand-container .selected-pledge .pledge-btn #pledge-input, .selection-modal .modal-container .black-edition-stand-container .selected-pledge .pledge-btn #pledge-input, .selection-modal .modal-container .mohogany-special-edition-container .selected-pledge .pledge-btn #pledge-input {
     margin-right: 15px;
   }
-}
-/* Light and Dark mode */
-/* Light Mode *//*# sourceMappingURL=main.css.map */
+  .selection-modal .modal-container .bamboo-stand-container .active-selected-pledge, .selection-modal .modal-container .black-edition-stand-container .active-selected-pledge, .selection-modal .modal-container .mohogany-special-edition-container .active-selected-pledge {
+    display: flex;
+  }
+}/*# sourceMappingURL=main.css.map */

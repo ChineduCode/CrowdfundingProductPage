@@ -13,9 +13,6 @@ Users will be able to:
 - See the number of total backers increment by one after confirming a pledge
 - Toggle whether or not the product is bookmarked
 
-**Lessons**
--It was really a very tough challenge for me but at last, I learnt many things (like: its by debugging that we learn)
-
 ## Next feature
 
-- Making the range responsive with the days Left
+- Making the range responsive with the days Left (now available)

@@ -10,6 +10,8 @@ body{
     text-align: center;
     font-size: 18px;
     font-family: 'Commissioner';
+    scroll-behavior: smooth;
+    transition: all .4s ease-in-out;
 }
 
 //hero-img
@@ -18,9 +20,7 @@ body{
         width: 100%;
         margin-top: 0%;
     }
-    .hero-img-desktop{
-        display: none;
-    }
+    .hero-img-desktop{display: none;}
 }
 
 //nav-container
@@ -36,12 +36,8 @@ body{
         margin: 2em 1em;
 
         span{
-            img{
-                cursor: pointer;
-            }
-            .icon-close-menu{
-                display: none;
-            }
+            img{cursor: pointer;}
+            .icon-close-menu{display: none;}
         }
     }
 
@@ -96,9 +92,7 @@ main {
             position: relative;
             bottom: 1.5em;
 
-            h2{
-                padding: 1em ;
-            }
+            h2{padding: 1em ;}
             .master-text{
                 color: rgb(138, 137, 137);
                 line-height: 22px;
@@ -120,9 +114,7 @@ main {
                     font-weight: 700;
                     cursor: pointer;
 
-                    &:active{
-                        background-color: hsl(176, 72%, 28%);
-                    }
+                    &:active{background-color: hsl(176, 72%, 28%);}
                 }
                 
                 .bookmark-container{
@@ -172,8 +164,27 @@ main {
                 padding-top: 1em;
             }
         }
-        input{
-            width: 100%;
+        
+        .progress-container{
+            .days-progress{
+                width: 100%;
+                height: 1rem;
+                background-color: rgb(241, 241, 241);
+                border-radius: 50px;
+                position: relative;
+                overflow: hidden;
+
+                .progress{
+                    position: absolute;
+                    height: 1rem;
+                    z-index: 10;
+                    top: 0;
+                    left: 0;
+                    background-color: hsl(176, 50%, 47%);
+                    width: 50%;
+                    border-radius: 50px;
+                }
+            }
         }
     }
     
@@ -192,9 +203,7 @@ main {
             border-radius: 7px;
             margin-top: 2em;
             padding: 1.6em;
-            h3{
-                padding-bottom: .5em;
-            }
+            h3{padding-bottom: .5em;}
             .price{
                 color: hsl(176, 50%, 47%);
                 font-weight: bold;
@@ -228,9 +237,7 @@ main {
             border: none;
             cursor: pointer;
 
-            &:active{
-                background-color: hsl(176, 72%, 28%);
-            }
+            &:active{background-color: hsl(176, 72%, 28%);}
         }
     }
 }
@@ -241,8 +248,8 @@ main {
     top: 25%;
     z-index: 1000;
     width: 100%;
-    transition: .6s;
-    display: none;
+    transform: translateY(-100%) scaleY(0);
+    transition: all .4s ease-in-out;
 
     .modal-container{
         margin: 0% 1em;
@@ -265,9 +272,8 @@ main {
             align-items: center;
             justify-content: space-between;
 
-            img{ //exit modal img
-                cursor: pointer;
-            }
+            img{cursor: pointer;}//exit modal img
+
             .header-text{
                 font-weight: bold;
                 font-size: 20px;
@@ -284,25 +290,25 @@ main {
                 display: flex;
                 align-items: center;
 
-                .modal-sub-header{
-                    margin-left: 15px;
-                }
+                .modal-sub-header{margin-left: 15px;}
             }
             
             input[type='radio']{
                 height: 20px;
                 width: 20px;
                 cursor: pointer;
+                -webkit-appearance: none;
+                border: solid 2px grey;
+                border-radius: 50%;
             }
+            .active{background-color: hsl(176, 50%, 47%);}
 
             .price{
                 color: hsl(176, 50%, 47%);
                 font-weight: bold;
                 cursor: pointer;
 
-                &:active{
-                    color: hsl(176, 72%, 28%);
-                }
+                &:active{color: hsl(176, 72%, 28%);}
             }
             
             .days-left{
@@ -356,9 +362,7 @@ main {
                         border: none;
                         cursor: pointer;
 
-                        &:active{
-                            background-color: hsl(176, 72%, 28%);
-                        }
+                        &:active{ background-color: hsl(176, 72%, 28%); }
                     }
 
                 }
@@ -368,9 +372,13 @@ main {
                     padding-top: 2em;
                 }
             }
+
+            .active-selected-pledge{display: block;}
         }
     }
 }
+//javascript class
+.active-modal{transform: translateY(0%) scaleY(1);}
 
 //success modal
 .success-modal-container{
@@ -396,9 +404,7 @@ main {
             transition: .5s;
         }
 
-        h2{
-            padding-bottom: 1em;
-        }
+        h2{padding-bottom: 1em;}
 
         button {
             color: white;
@@ -412,25 +418,19 @@ main {
             display: inline-block;
             margin-top: 15px;
 
-            &:active{
-                background-color: hsl(176, 72%, 28%);
-            }
+            &:active{ background-color: hsl(176, 72%, 28%);}
 
         }
     }
 }
 
 //class for toggling modals
-.toggle{
-    display: block;
-};
+.toggle{display: block;};
 
-
+//desktop view
 @media only screen and (min-width: 768px){
     .hero-img-container{
-        .hero-img-mobile{
-            display: none;
-        }
+        .hero-img-mobile{display: none;}
         .hero-img-desktop{
             display: block;
             width: 100%;
@@ -472,12 +472,8 @@ main {
                         text-decoration: none;
                         color: white;
                         font-weight: 500;
-                        &:hover{
-                            font-weight: 600;
-                        }
-                        &:active{
-                            filter: drop-shadow(.8);
-                        }
+                        &:hover{font-weight: 600;}
+                        &:active{filter: drop-shadow(.8);}
                     }
                 }
             }
@@ -492,14 +488,10 @@ main {
             .mastercraft-main{
                 .Btn-bookmark-container{
                     .bookmark-container{
-                        .bookmark-text{
-                            display: block;
-                        }
+                        .bookmark-text{display: block;}
                         .bookmark{
                             color: hsl(176, 50%, 47%);
-                            &::after{
-                                content: 'ed';
-                            }
+                            &::after{content: 'ed';}
                         }
                     }
                 }
@@ -509,10 +501,9 @@ main {
            display: flex;
            align-items: center;
            justify-content: space-around;
+           text-align: justify;
            
-           hr{
-              display: none;
-            }
+           hr{display: none;}
         }
 
         .about-container{
@@ -525,59 +516,43 @@ main {
     }
 
     //modal container
+ 
     .selection-modal{
         .modal-container{
-            width: 70%;
             margin: auto;
+            width: 60%;
 
             .modal-sub-header{
                 display: flex;
                 align-items: center;
                 flex-wrap: wrap;
 
-                p{
-                    margin-left: 15px;
-                }
+                p{margin-left: 15px;}
             }
-            
-            //selected pledge
-            .selected-pledge{
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
 
-                .pledge-btn{
-                    #pledge-input{
-                        margin-right: 15px;
+            .bamboo-stand-container, .black-edition-stand-container, .mohogany-special-edition-container{
+                position: relative;
+
+                .days-left{
+                    position: absolute;
+                    top: 8px;
+                    right: 33px;
+                }
+
+                //selected pledge
+                .selected-pledge{
+                    margin-top: 2em;
+                    display: none;
+                    align-items: center;
+                    justify-content: space-between;
+    
+                    .pledge-btn{
+                        #pledge-input{margin-right: 15px;}
                     }
                 }
+
+                .active-selected-pledge{display: flex;}
             }
         }
     }
-
-    // .bookmark-container{
-    //     .bookmark-text{
-    //         background-color: blue
-    //     }
-    // }
 }
-
-
-
-/* Light and Dark mode */
-
-/* Light Mode */
-// @media (prefers-color-scheme: light) {
-//     :root {
-//         --body-bg: #ffffff;
-//         --body-color: #000000;
-//     }
-// }
-
-// /* Dark Mode */
-// @media (prefers-color-scheme: dark) {
-//     :root {
-//         --body-bg: #000000;
-//         --body-color: #ffffff;
-//     }
-// }
